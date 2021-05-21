@@ -7,13 +7,15 @@ services:
     gitlab:
         container_name: gitlab-ce
         image: gitlab/gitlab-ce:12.3.9-ce.0
+        # 设置容器的权限为root
+        privileged: true
         restart: always
         ports:
             - 8080:80
             - 8443:443
         volumes:
             - ./data:/etc/gitlab
-            - ./logs:/var/log/****gitlab
+            - ./logs:/var/log/gitlab
             - ./data:/var/opt/gitlab
-
-
+        limits:
+            memory: 4G
