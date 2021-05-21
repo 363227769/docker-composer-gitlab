@@ -13,10 +13,6 @@ services:
         ports:
             - 8080:80
             - 8443:443
-        environment:
-            GITLAB_OMNIBUS_CONFIG: |
-                external_url 'http://0.0.0.0:8080'
-                gitlab_rails['time_zone'] = 'PRC'
         volumes:
             - ./etc:/etc/gitlab
             - ./logs:/var/log/gitlab
