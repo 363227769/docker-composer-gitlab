@@ -1,5 +1,4 @@
-# 配置修改
-vim etc/gitlab.rb
+## 常见配置
 ~~~
 ###################################################
 # 添加外部请求的域名(如果不支持https, 可以改成http)
@@ -30,8 +29,9 @@ nginx['ssl_certificate'] = "/data/gitlab/ssl/gitlab.example.com.crt"
 nginx['ssl_certificate_key'] = "/data/gitlab/ssl/gitlab.example.com.key"
 ~~~
 
-修改仓库地址
-～～～
+## 修改仓库地址
+
+~~~
 进入容器
 docker exec -it gitlab-ce bash
 修改配置文件
@@ -41,10 +41,10 @@ gitlab:
   host: 0.0.0.0
   port: 8080
   https: false
-  
+
 重启gitlab
 gitlab-ctl restart
-～～～
+~~~
 
 
 
