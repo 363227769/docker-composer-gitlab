@@ -17,5 +17,3 @@ services:
             - ./data:/etc/gitlab
             - ./logs:/var/log/gitlab
             - ./data:/var/opt/gitlab
-        limits:
-            memory: 4G
