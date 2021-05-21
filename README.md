@@ -29,3 +29,22 @@ nginx['redirect_http_to_https'] = true
 nginx['ssl_certificate'] = "/data/gitlab/ssl/gitlab.example.com.crt"
 nginx['ssl_certificate_key'] = "/data/gitlab/ssl/gitlab.example.com.key"
 ~~~
+
+修改仓库地址
+～～～
+进入容器
+docker exec -it gitlab-ce bash
+修改配置文件
+vim /opt/gitlab/embedded/service/gitlab-rails/config/gitlab.yml
+
+gitlab:
+  host: 0.0.0.0
+  port: 8080
+  https: false
+  
+重启gitlab
+gitlab-ctl restart
+～～～
+
+
+
